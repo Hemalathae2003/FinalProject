@@ -1,0 +1,5 @@
+FROM openjdk:22-jdk-slim-bullseye
+ARG JAR_FILE=target/*.jar
+COPY ./target/CSP.jar csp.jar
+EXPOSE 8900
+ENTRYPOINT ["java","-jar","/csp.jar"]
