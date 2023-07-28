@@ -9,9 +9,9 @@ import jakarta.persistence.ManyToOne;
 public class Ordermodel {
 	
 	
-	//@ManyToOne // Many orders can be taken for one plan
-    //@JoinColumn(name = "plan_id") // Name of the foreign key column in the order table
-    private int plan_id;
+	@ManyToOne // Many orders can be taken for one plan
+    @JoinColumn(name = "plan_id") // Name of the foreign key column in the order table
+	private  Catalogmodel catalogmodel;
 	
 	
 	
@@ -19,11 +19,11 @@ public class Ordermodel {
 	private int order_id;
 	public Ordermodel() {
 	}
-	public int getPlan_id() {
-		return plan_id;
+	public Catalogmodel getCatalogmodel() {
+		return catalogmodel;
 	}
-	public void setPlan_id(int plan_id) {
-		this.plan_id = plan_id;
+	public void setCatalogmodel(Catalogmodel catalogmodel) {
+		this.catalogmodel = catalogmodel;
 	}
 	public int getOrder_id() {
 		return order_id;

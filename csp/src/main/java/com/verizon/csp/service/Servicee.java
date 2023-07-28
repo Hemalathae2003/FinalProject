@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
+import com.verizon.csp.model.Ordermodel;
 import com.verizon.csp.model.Servicemodel;
 
 import com.verizon.csp.repo.Servicerepo;
@@ -36,24 +36,24 @@ public class Servicee {
 	public Servicemodel getServicemodelById (Integer service_id) {
 		return servrepo.findById(service_id).orElse((null));
 	}
-	
-	/*
-	 * public Servicemodel updateServicemodel(Integer id,Servicemodel service) {
-	 * Servicemodel existingServicemodel =servrepo.findById(id).orElse(null); if
-	 * (existingServicemodel !=null) {
-	 * existingServicemodel.setCust_name(customer.getCust_name());
-	 * existingServicemodel.setCust_age(customer.getCust_age()); return
-	 * servrepo.save(existingCustomer);
-	 * 
-	 * } return null;
-	 * 
-	 * 
-	 * }
-	 */
-	/*
-	 * public void deleteCustomer(Integer id) { custrepo.deleteById(id); }
-	 * 
-	 */
-	
-	
+	public Servicemodel updateServicemodel(Integer id,Servicemodel servicemodel) {
+		Servicemodel existingServicemodel = servrepo.findById(id).orElse(null);
+		if (existingServicemodel != null) {
+			existingServicemodel.setService_id(servicemodel.getService_id());
+			existingServicemodel.setProvision(servicemodel.getProvision());
+			existingServicemodel.setTest_qos(servicemodel.getTest_qos());
+			existingServicemodel.setActitvity(servicemodel.getActitvity());
+			existingServicemodel.setCatalogmodel(servicemodel.getCatalogmodel());
+		
+			return servrepo.save(existingServicemodel);
+			
+		}
+		return null;
+	}
+
+
+
 }
+	
+	
+

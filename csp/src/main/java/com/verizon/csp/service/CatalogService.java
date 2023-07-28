@@ -33,6 +33,29 @@ public class CatalogService {
 		return catalogrepo.save(catmodel);
 	}
 	
+	public Catalogmodel getCatalogmodelById (Integer plan_id) {
+		return catalogrepo.findById(plan_id).orElse((null));
+	}
+	
+	
+	public Catalogmodel updateCatalogmodel(Integer id,Catalogmodel catmodel) {
+		Catalogmodel existingCatalogmodel = catalogrepo.findById(id).orElse(null);
+		if (existingCatalogmodel != null) {
+			existingCatalogmodel.setPlan_id(catmodel.getPlan_id());
+			existingCatalogmodel.setPlan_name(catmodel.getPlan_name());
+			existingCatalogmodel.setDuration(catmodel.getDuration());
+			existingCatalogmodel.setPrice(catmodel.getPrice());
+			return catalogrepo.save(existingCatalogmodel);
+			
+		}
+		return null;
+	}
+	
+	public void deleteCatalogmodel(Integer id)
+	{
+		catalogrepo.deleteById(id);
+	}
+	
 
 
 	

@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
+import com.verizon.csp.model.EnterpriseCustomermodel;
 import com.verizon.csp.model.Ordermodel;
 import com.verizon.csp.repo.Orderrepo;
 
@@ -28,5 +28,22 @@ public class OrderService {
 		return orderrepo.save(ordermodel);
 	}
 	
+	public Ordermodel getOrdermodelById (Integer ord_id) {
+		return orderrepo.findById(ord_id).orElse((null));
+	}
+	
+	
+	
+	public Ordermodel updateOrdermodel(Integer id,Ordermodel ordermodel) {
+		Ordermodel existingOrdermodel = orderrepo.findById(id).orElse(null);
+		if (existingOrdermodel != null) {
+			existingOrdermodel.setOrder_id(ordermodel.getOrder_id());
+			existingOrdermodel.setCatalogmodel(ordermodel.getCatalogmodel());
+		
+			return orderrepo.save(existingOrdermodel);
+			
+		}
+		return null;
+	}
 
 }

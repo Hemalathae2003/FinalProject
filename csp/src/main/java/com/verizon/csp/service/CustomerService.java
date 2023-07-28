@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.verizon.csp.model.Catalogmodel;
 import com.verizon.csp.model.Customermodel;
 
 import com.verizon.csp.repo.Customerrepo;
@@ -30,6 +31,24 @@ private final Customerrepo custrepo;
 		return custrepo.save(customermodel);
 	}
 	
+	public Customermodel getCustomermodelById (Integer cust_id) {
+		return custrepo.findById(cust_id).orElse((null));
+	}
 	
+	
+	public Customermodel updateCustomermodel(Integer id,Customermodel customermodel) {
+		Customermodel existingCustomermodel = custrepo.findById(id).orElse(null);
+		if (existingCustomermodel != null) {
+			existingCustomermodel.setCust_id(customermodel.getCust_id());
+			existingCustomermodel.setCust_name(customermodel.getCust_name());
+			existingCustomermodel.setOrdermodel(customermodel.getOrdermodel());
+		
+			return custrepo.save(existingCustomermodel);
+			
+		}
+		return null;
+	}
+	
+
 
 }
