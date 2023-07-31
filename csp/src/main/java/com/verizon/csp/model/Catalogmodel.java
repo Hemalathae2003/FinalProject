@@ -11,6 +11,7 @@ public class Catalogmodel {
 	private String plan_name;
 	private int price;
 	private String duration;
+	//private Catalogmodel catmodel;
 	
 	public Catalogmodel() {
 		

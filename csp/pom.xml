@@ -39,6 +39,156 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
+		
+		<dependency>
+
+			<groupId>javax.servlet.jsp</groupId>
+
+			<artifactId>javax.servlet.jsp-api</artifactId>
+
+			<version>2.3.3</version>
+
+			<scope>provided</scope>
+
+		</dependency>
+
+		<dependency>
+
+			<groupId>org.springframework.boot</groupId>
+
+			<artifactId>spring-boot-devtools</artifactId>
+
+		</dependency>
+
+		<!-- JSP Standard Tag Library (JSTL) API -->
+
+		<dependency>
+
+			<groupId>javax.servlet.jsp.jstl</groupId>
+
+			<artifactId>javax.servlet.jsp.jstl-api</artifactId>
+
+			<version>1.2.2</version>
+
+		</dependency>
+
+		<dependency>
+
+			<groupId>org.thymeleaf</groupId>
+
+			<artifactId>thymeleaf</artifactId>
+
+		</dependency>
+
+
+
+
+
+		<!-- Embedded Tomcat Jasper JSP Engine -->
+
+		<dependency>
+
+			<groupId>org.apache.tomcat.embed</groupId>
+
+			<artifactId>tomcat-embed-jasper</artifactId>
+
+			<scope>provided</scope>
+
+		</dependency>
+
+
+
+		<dependency>
+
+
+
+			<groupId>junit</groupId>
+
+
+
+			<artifactId>junit</artifactId>
+
+
+
+
+
+			<scope>test</scope>
+
+
+
+		</dependency>
+
+
+
+
+
+		<!-- https://mvnrepository.com/artifact/info.cukes/cucumber-junit -->
+
+
+
+		<dependency>
+
+
+
+			<groupId>info.cukes</groupId>
+
+
+
+			<artifactId>cucumber-junit</artifactId>
+
+
+
+			<version>1.2.5</version>
+
+
+
+			<scope>test</scope>
+
+
+
+		</dependency>
+
+
+
+
+
+		<!-- https://mvnrepository.com/artifact/junit/junit -->
+
+
+
+
+
+		<!--
+
+		https://mvnrepository.com/artifact/org.uniknow.agiledev/cucumber-reporting -->
+
+
+
+		<dependency>
+
+
+
+			<groupId>org.uniknow.agiledev</groupId>
+
+
+
+			<artifactId>cucumber-reporting</artifactId>
+
+
+
+			<version>0.1.14</version>
+
+
+
+		</dependency>
+
+
+
+
+
+		
+		
 
 	</dependencies>
 
